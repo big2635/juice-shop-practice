@@ -1,0 +1,22 @@
+{
+  "name": "practice-juice-shop",
+  "version": "1.0.0",
+  "description": "Juice Shop",
+  "main": "index.js",
+  "scripts": {  
+    "triggerAllTests-headless": "npx cypress run",
+    "triggerAllTests-headed": "npx cypress run --headed",
+    "triggerAllTests-chrome": "npx cypress run --browser chrome",
+    "triggerAllTests-juice-shop": "npx cypress run --spec cypress/e2e/juice-shop/custom-command/*",
+    "triggerAllTests-headed-specific-folder-customCommand": "npx cypress run --headed --spec cypress/e2e/juice-shop/custom-command/*",
+    "triggerAllTests-headed-specific-folder-ownTesting": "npx cypress run --headed --spec cypress/e2e/juice-shop/own-testing/*"
+  },
+  "author": "Marbz",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.8.0"
+  },
+  "dependencies": {
+    "npx": "^10.2.2"
+  }
+}

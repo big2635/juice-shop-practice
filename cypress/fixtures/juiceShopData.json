@@ -1,0 +1,12 @@
+{   
+    "validEmail": "temp1234!!@gmail.com",
+    "unregEmail": "temp1234@gmail.com",
+    "password": "Password1",
+    "repassword": "Password1",
+    "unmatch": "123456781qwerty",
+    "lessPass": "1234",
+    "morePass": "Temp",
+    "securityAnswer": "Hello world",
+    "newPassword": "Temp1234!!",
+    "repeatNewPassword": "Temp1234!!"
+}

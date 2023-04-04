@@ -1,1 +1,1 @@
-# juice-shop-practice
+# cypress-practice-juice
