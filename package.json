@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Juice Shop",
   "main": "index.js",
-  "scripts": {  
+  "scripts": {
     "triggerAllTests-headless": "npx cypress run",
     "triggerAllTests-headed": "npx cypress run --headed",
     "triggerAllTests-chrome": "npx cypress run --browser chrome",
@@ -14,7 +14,8 @@
   "author": "Marbz",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.8.0"
+    "cypress": "^12.8.0",
+    "cypress-xpath": "^2.0.1"
   },
   "dependencies": {
     "npx": "^10.2.2"
