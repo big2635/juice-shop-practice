@@ -24,8 +24,9 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+
 //sign-up juice shop                     //passing a variables
-Cypress.Commands.add('signup', (email,password,repass,securityAnswer) => {
+Cypress.Commands.add('signup', (email, password, repass, securityAnswer) => {
     //text input
     cy.get('#emailControl').type(email);
     cy.get('#passwordControl').type(password);
@@ -37,17 +38,18 @@ Cypress.Commands.add('signup', (email,password,repass,securityAnswer) => {
     cy.get('#securityAnswerControl').type(securityAnswer);
 });
 
+
 //login juice shop         //passing a variables
-Cypress.Commands.add('login', (email,password) => {
-    
+Cypress.Commands.add('login', (email, password) => {
+
     cy.get('#email').type(email);
     cy.get('#password').type(password);
 
 });
 
 //forgot-password juice shop  //passing a variables
-Cypress.Commands.add('forgot', (email,answer,newPassword,repeatNewPassword,$selector,textToLocate) => {
-    
+Cypress.Commands.add('forgot', (email, answer, newPassword, repeatNewPassword, $selector, textToLocate) => {
+
     cy.get('#email').type(email);
     cy.get('#securityAnswer').type(answer);
     cy.get('#newPassword').type(newPassword);
@@ -57,18 +59,7 @@ Cypress.Commands.add('forgot', (email,answer,newPassword,repeatNewPassword,$sele
 
 });
 
-
-// Cypress.Commands.add('webdriverUni_ContactForm', (firstName, lastName, email, comment, $selector, textToLocate) => {
-//     cy.get('[name="first_name"]').type(firstName)
-//     cy.get('[name="last_name"]').type(lastName)
-//     cy.get('[name="email"]').type(email)
-//     cy.get('textarea.feedback-input').type(comment)
-//     cy.get('[type="submit"]').click()
-//     cy.get($selector).contains(textToLocate)
-// })
-
-
-//notifyre
+//notifyre register
 Cypress.Commands.add('signUpNotifyre', (register) => {
     //input fields
     cy.get('#mat-input-1').type(register.firstName);
@@ -91,3 +82,33 @@ Cypress.Commands.add('signUpNotifyre', (register) => {
 
 });
 
+//notifyre login
+Cypress.Commands.add('loginToNotifyre', (email, password) => {
+
+    cy.get('#mat-input-0').type(email);
+    cy.xpath('//app-external-card//form/button').click();
+    cy.get('#mat-input-1').type(password);
+    cy.xpath('//app-external-card//form/button').click();
+})
+
+//notifyre sending fax
+Cypress.Commands.add('sendingTheFax', (number, message) => {
+
+     //Fax button
+     cy.get('#mat-expansion-panel-header-1').click();
+     //Quick Fax button
+     cy.get('#cdk-accordion-child-1 > .mat-expansion-panel-body > :nth-child(1)').click();
+
+     cy.wait(10000);
+     //sending number
+     cy.get('#mat-input-5').type(number)
+
+     //message
+     cy.get('#mat-input-4').type(message)
+     cy.get('#mat-slide-toggle-1 > .mat-slide-toggle-label > .mat-slide-toggle-bar').click()
+
+     cy.get('input[type=file]').selectFile("cypress/fixtures/laptop.png", {
+         force: true
+     })
+ 
+})
