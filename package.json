@@ -15,9 +15,11 @@
   "license": "ISC",
   "devDependencies": {
     "cypress": "^12.8.0",
-    "cypress-xpath": "^2.0.1"
+    "cypress-file-upload": "^5.0.8"
   },
   "dependencies": {
-    "npx": "^10.2.2"
+    "cypress-xpath": "^2.0.1",
+    "npx": "^10.2.2",
+    "xpath": "^0.0.32"
   }
 }
